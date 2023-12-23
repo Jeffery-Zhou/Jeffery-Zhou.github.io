@@ -1,8 +1,8 @@
 ---
 layout: post
-date: 2015-10-22 15:59:00-0400
+date: 2022-11-29 12:00:00-0000
 inline: true
 related_posts: false
 ---
+🏆<a href='https://aihk2022.comp.hkbu.edu.hk/'> Best AI Implementation Award </a>, AI x HK Opencup 2022
 
-A simple inline announcement.

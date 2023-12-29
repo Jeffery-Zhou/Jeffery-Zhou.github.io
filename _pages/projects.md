@@ -1,8 +1,8 @@
 ---
 layout: page
-title: projects (Coming soon!)
+title: Projects
 permalink: /projects/
-description: A growing collection of your cool projects.
+description: <b> Coming soon! </b> 
 nav: true
 nav_order: 2
 display_categories: [work, fun]

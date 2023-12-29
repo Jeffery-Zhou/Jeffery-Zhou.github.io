@@ -1,6 +1,6 @@
 ---
 layout: about
-title: about
+title: About
 permalink: /
 subtitle: Postdoctoral Fellow @ <a href='https://www.hku.hk/'>The University of Hong Kong</a>. <br> Research Officer @ <a href='https://www.hkuinno.com.hk/air/centre-for-transformative-garment-production/'>Center for Transformative Garment Production</a>. <br>  CTO @  FlexAI The Ideation Programme.
 

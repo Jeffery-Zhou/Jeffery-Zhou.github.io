@@ -1,12 +1,14 @@
 ---
 layout: page
 permalink: /teaching/
-title: teaching
-description: Materials for courses you taught. Replace this text with your description.
+title: Teaching
+#description: Materials for courses you taught. Replace this text with your description.
 nav: true
 nav_order: 5
 ---
+Currently, I am translating the following course:
+<a href='https://manipulation.csail.mit.edu/index.html'> Robotic Manipulation: Perception, Planning, and Control  </a> by Prof. <a href='http://groups.csail.mit.edu/locomotion/russt.html'> Russ Tedrake </a> at MIT, into Chinese,
+and plan to edit the course into a book in the future.
 
-For now, this page is assumed to be a static description of your courses. You can convert it to a collection similar to `_projects/` so that you can have a dedicated page for each course.
+<b> Note: </b> Prof. Russ has a fantastic course video recoding of the Fall 2022 semester at <a href="https://www.youtube.com/playlist?list=PLkx8KyIQkMfUSDs2hvTWzaq-cxGl8Ha69" >  YouTube </a>.
 
-Organize your courses by years, topics, or universities, however you like!

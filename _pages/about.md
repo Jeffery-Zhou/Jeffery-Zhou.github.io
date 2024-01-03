@@ -30,6 +30,9 @@ Before that, I received my Master's degree from the School of Software Engineeri
 
 I enjoy research at the intersection of Robotics, Machine Learning, and Computer Vision applied to problems in Robotic Manipulation.
 My research interests include `deformable object manipulation`, `robot learning`, and `task and motion planning`.
+My ultimate goal is to develop robots with human-like cognition and manipulation abilities.
+
+<u><strong>My ultimate research goal 🌈</strong> is to <strong> develop robots 🤖 with human-like cognition 🧠 and manipulation 🦾 abilities.</strong></u>
 
 
 

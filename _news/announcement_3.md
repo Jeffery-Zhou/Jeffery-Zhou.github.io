@@ -5,6 +5,6 @@ inline: true
 related_posts: false
 ---
 
-Our new pager on <b>Imitating Learning for Tool-based Garment Folding</b> has been accepted in <i>IEEE Transactions on Industrial Informatics</i>, 2023
+Our new paper on <b>Imitating Learning for Tool-based Garment Folding</b> has been accepted in <i>IEEE Transactions on Industrial Informatics</i>, 2023
 
 

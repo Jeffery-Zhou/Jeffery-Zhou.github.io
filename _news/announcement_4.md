@@ -5,7 +5,7 @@ inline: true
 related_posts: false
 ---
 
-Our new pager on <b>Neural reactive path planning for robotic silicone sealing</b> has been accepted in <i>Robotics and Computer-Integrated Manufacturing
+Our new paper on <b>Neural reactive path planning for robotic silicone sealing</b> has been accepted in <i>Robotics and Computer-Integrated Manufacturing
 </i>, 2023
 
 

@@ -2,7 +2,7 @@
 layout: about
 title: About
 permalink: /
-subtitle: Postdoctoral Fellow @ <a href='https://www.hku.hk/'>The University of Hong Kong</a>. <br> Research Officer @ <a href='https://www.hkuinno.com.hk/air/centre-for-transformative-garment-production/'>Center for Transformative Garment Production</a>. <br>  CTO @  FlexAI The Ideation Programme.
+subtitle: Lecturer @ <a href='https://www.jnu.edu.cn/main.htm'>Jinan University</a>. <br>Postdoctoral Fellow @ <a href='https://www.hku.hk/'>The University of Hong Kong</a>. <br> Research Officer @ <a href='https://www.hkuinno.com.hk/air/centre-for-transformative-garment-production/'>Center for Transformative Garment Production</a>. <br>  CTO @  FlexAI The Ideation Programme.
 
 profile:
   align: right

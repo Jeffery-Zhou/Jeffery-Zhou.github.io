@@ -2,7 +2,9 @@
 layout: about
 title: About
 permalink: /
-subtitle: Lecturer @ <a href='https://www.jnu.edu.cn/main.htm'>Jinan University</a>. <br>Postdoctoral Fellow @ <a href='https://www.hku.hk/'>The University of Hong Kong</a>. <br> Research Officer @ <a href='https://www.hkuinno.com.hk/air/centre-for-transformative-garment-production/'>Center for Transformative Garment Production</a>. <br>  CTO @  FlexAI The Ideation Programme.
+subtitle: 
+#  Lecturer @ <a href='https://www.jnu.edu.cn/main.htm'>Jinan University</a>. <br>
+  Postdoctoral Fellow @ <a href='https://www.hku.hk/'>The University of Hong Kong</a>. <br> Research Officer @ <a href='https://www.hkuinno.com.hk/air/centre-for-transformative-garment-production/'>Center for Transformative Garment Production</a>. <br>  CTO @  FlexAI supported by The HK Ideation Programme.
 
 profile:
   align: right
@@ -23,13 +25,13 @@ Currently, I am a research officer at the Center for Transformative Garment Prod
 
 Before that, I worked at <a href='https://www.romi-lab.org/'>The Robotic and Machine Intelligence Lab</a>, and obtained my `Ph.D. degree in Robotics` from Hong Kong Polytechnic University, under the supervision of <a href='https://www.polyu.edu.hk/me/david/'> Dr. David Navarro-Alarcon</a>. 
 
-In 2021, I worked as a visiting Ph.D. student at <a href='https://www.kth.se/is/rpl/about-rpl'> The Robotics, Perception and Learning Lab </a>, KTH, under the supervision of <a href='https://www.csc.kth.se/~danik/'> Prof. Danica Kragic </a>. Furthermore, I also worked with <a href='https://jihong-zhu.github.io/'> Dr. Jihong Zhu </a>, <a href='https://www.lirmm.fr/andrea-cherubini/'>Prof. Andrea Cherubini</a>, and <a href='https://www.polyu.edu.hk/ise/people/academic-staff/pai-zheng/'> Prof. Pai Zheng </a>. 
+In 2021, I worked as a visiting Ph.D. student at <a href='https://www.kth.se/is/rpl/about-rpl'> The Robotics, Perception and Learning Lab </a>, KTH, under the supervision of <a href='https://www.csc.kth.se/~danik/'> Prof. Danica Kragic </a>. Furthermore, I also worked with <a href='https://www.polyu.edu.hk/ise/people/academic-staff/pai-zheng/'> Prof. Pai Zheng </a>, <a href='https://irmv.sjtu.edu.cn/wanghesheng'> Prof. Hesheng Wang </a>, <a href='https://jihong-zhu.github.io/'> Dr. Jihong Zhu </a> and <a href='https://people.uwe.ac.uk/Person/CharlieYang'> Dr. Charlie Yang </a> during my Ph.D. study.
 
 Prior to PolyU, I have two years with Tencent as an algorithm engineer, and one year with Discover Financial Service as a senior data analyst.
 Before that, I received my Master's degree from the School of Software Engineering, Tongji University in 2017 with The Outstanding Graduate honor, under the supervision of Prof. Yan Liu.
 
 I enjoy research at the intersection of Robotics, Machine Learning, and Computer Vision applied to problems in Robotic Manipulation.
-My research interests include `deformable object manipulation`, `robot learning`, and `task and motion planning`.
+My research interests include `deformable object manipulation`, `robot cognition`, and `task and motion planning`.
 My ultimate goal is to develop robots with human-like cognition and manipulation abilities.
 
 <u><strong>My ultimate research goal 🌈</strong> is to <strong> develop robots 🤖 with human-like cognition 🧠 and manipulation 🦾 abilities.</strong></u>

@@ -2,13 +2,12 @@
 layout: page
 title: Research Fundamentals
 permalink: /fundamentals/
-description: <b> 以下为《基于隐空间表征和隐动力学模型的机器人可形变物体操纵》中研究基础部分的补充实验视频。 </b> 
+description: <b> 以下为研究基础的实验视频。 </b> 
 nav: true
 nav_order: 2
 display_categories: [work, fun]
 horizontal: false
 ---
-衷心感谢项目评审专家们的细致审查与专业评估，您的宝贵意见对于本研究项目的深化与推进至关重要。
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">

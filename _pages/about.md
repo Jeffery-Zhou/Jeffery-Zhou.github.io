@@ -4,7 +4,9 @@ title: About
 permalink: /
 subtitle: 
 #  Lecturer @ <a href='https://www.jnu.edu.cn/main.htm'>Jinan University</a>. <br>
-  Postdoctoral Fellow @ <a href='https://www.hku.hk/'>The University of Hong Kong</a>. <br> Research Officer @ <a href='https://www.hkuinno.com.hk/air/centre-for-transformative-garment-production/'>Center for Transformative Garment Production</a>. <br>  CTO @  FlexAI supported by The HK Ideation Programme.
+  Postdog @ <a href='https://www.hku.hk/'>The University of Hong Kong</a>. 
+#  <br> Research Officer @ <a href='https://www.hkuinno.com.hk/air/centre-for-transformative-garment-production/'>Center for Transformative Garment Production</a>. <br>  
+#  CTO @  FlexAI supported by The HK Ideation Programme.
 
 profile:
   align: right
@@ -19,9 +21,11 @@ latest_posts: false  # includes a list of the newest posts
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
-Currently, I am a research officer at the Center for Transformative Garment Production (TransGP) directed by 
-<a href='https://www.eee.hku.hk/people/kazuhiro-kosuge/'> Prof. Kazuhiro Kosuge <a/> and
-<a href='https://www.cs.hku.hk/people/academic-staff/wenping'> Prof. Wenping Wang </a>, and a post-doctoral researcher at the University of Hong Kong (HKU) advised by <a href='https://www.cs.hku.hk/people/academic-staff/jpan'> Prof. Pan Jia</a>.
+Currently, I am a post-doctoral researcher at the University of Hong Kong (HKU) advised by <a href='https://www.cs.hku.hk/people/academic-staff/jpan'> Prof. Pan Jia</a>.
+
+[//]: # (a research officer at the Center for Transformative Garment Production &#40;TransGP&#41; directed by )
+[//]: # (<a href='https://www.eee.hku.hk/people/kazuhiro-kosuge/'> Prof. Kazuhiro Kosuge <a/> and)
+[//]: # (<a href='https://www.cs.hku.hk/people/academic-staff/wenping'> Prof. Wenping Wang </a>, and)
 
 Before that, I worked at <a href='https://www.romi-lab.org/'>The Robotic and Machine Intelligence Lab</a>, and obtained my `Ph.D. degree in Robotics` from Hong Kong Polytechnic University, under the supervision of <a href='https://www.polyu.edu.hk/me/david/'> Dr. David Navarro-Alarcon</a>. 
 

@@ -1,3 +1,19 @@
+/* Reduce vertical spacing for tables */
+table {
+  margin-bottom: 10px; /* Adjust this value to reduce spacing */
+}
+
+/* Reduce spacing for section headings */
+sectionheading {
+  display: block;
+  margin-bottom: -30px; /* Adjust this value to reduce spacing */
+}
+
+/* Reduce padding inside table cells */
+td {
+  padding: 10px; /* Adjust this value to reduce spacing */
+}
+
 /* latin-ext */
 @font-face {
   font-family: 'Titillium Web';

@@ -1,792 +1,373 @@
-
-<!DOCTYPE HTML>
-<html lang="en" xmlns="http://www.w3.org/1999/html"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-  <title>Peng Zhou </title>
-
-  <meta name="author" content="Peng Zhou">
-  <meta name="descripction" content="Peng Zhou is a post-doctoral researcher at the university of hong kong.">
-  <meta name="keywords" content="Peng Zhou, post-doc, robotics, HKU">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <link rel="stylesheet" type="text/css" href="stylesheet.css">
-  <link rel="icon" type="image/png" href="imgs/hku-icon-small.jpg">
-
-  <script src="function.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Peng Zhou | Academic Profile</title>
+    <style>
+        :root{
+            --bg:#0b1020; --panel:#0f1733; --card:#0f1a3b;
+            --text:#e9eefc; --muted:#b8c4ea; --faint:#7f8bb3;
+            --brand:#7aa2ff; --brand2:#7ef0d2; --stroke:rgba(255,255,255,.12);
+            --shadow:0 18px 50px rgba(0,0,0,.35); --radius:16px; --radius2:22px;
+            --max:1120px; --topbar:72px;
+        }
+        *{box-sizing:border-box}
+        html,body{height:100%; margin:0; padding:0; scroll-behavior:smooth;}
+        body{
+            padding-top:var(--topbar);
+            color:var(--text);
+            font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+            background:
+                radial-gradient(1200px 800px at 12% 10%, rgba(122,162,255,.18), transparent 60%),
+                radial-gradient(900px 700px at 88% 14%, rgba(126,240,210,.14), transparent 58%),
+                radial-gradient(900px 900px at 50% 90%, rgba(154,123,255,.10), transparent 55%),
+                linear-gradient(180deg, #070a14, #0b1020 40%, #070a14);
+            overflow-x:hidden;
+        }
+        a{color:inherit; text-decoration:none;}
+        .wrap{max-width:var(--max); margin:0 auto; padding:0 20px;}
+        .topbar{
+            position:fixed; inset:0 0 auto 0; z-index:50; width:100%;
+            backdrop-filter:blur(10px);
+            background:rgba(7,10,20,.62);
+            border-bottom:1px solid var(--stroke);
+        }
+        .nav{display:flex; align-items:center; justify-content:space-between; gap:14px; padding:14px 0;}
+        .brand{display:flex; align-items:center; gap:12px; min-width:220px;}
+        .logo-img{
+            width:40px; height:40px; object-fit:contain; border-radius:12px; padding:6px;
+            background: rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.16); box-shadow:0 10px 26px rgba(0,0,0,.28);
+        }
+        .brand h1{margin:0; font-size:14px; letter-spacing:.35px;}
+        .brand p{margin:3px 0 0; color:var(--muted); font-size:12px;}
+        .links{display:flex; align-items:center; gap:16px; flex-wrap:wrap; justify-content:flex-end;}
+        .links a{color:var(--muted); font-size:13px; padding:8px 10px; border-radius:12px; border:1px solid transparent;}
+        .links a:hover{color:var(--text); border-color:var(--stroke); background:rgba(255,255,255,.04);}
+        .btn{
+            display:inline-flex; align-items:center; gap:10px; padding:10px 12px;
+            border-radius:14px; border:1px solid var(--stroke);
+            background:rgba(255,255,255,.04); color:var(--text); font-size:13px;
+            box-shadow:0 10px 26px rgba(0,0,0,.18); white-space:nowrap;
+        }
+        .btn.primary{border-color:rgba(122,162,255,.45); background:linear-gradient(135deg, rgba(122,162,255,.22), rgba(126,240,210,.12));}
+        .btn:hover{transform:translateY(-1px)}
+        .dot{width:8px; height:8px; border-radius:99px; background:var(--brand2); box-shadow:0 0 0 4px rgba(126,240,210,.12);}
+        header.hero{padding:46px 0 24px;}
+        .hero-grid{display:grid; grid-template-columns:1.1fr .9fr; gap:18px; align-items:stretch;}
+        .hero-card{
+            border:1px solid var(--stroke); border-radius:var(--radius2); box-shadow:var(--shadow);
+            padding:22px; position:relative; overflow:hidden;
+            background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.015));
+        }
+        .hero-card::before{
+            content:""; position:absolute; inset:-120px -120px auto auto; width:240px; height:240px;
+            background:radial-gradient(circle at 30% 30%, rgba(122,162,255,.38), transparent 60%);
+            filter:blur(2px); transform:rotate(18deg);
+        }
+        .kicker{display:flex; align-items:center; gap:10px; color:var(--muted); font-size:13px; margin:0 0 10px; position:relative; z-index:1;}
+        .title{margin:0; font-size:32px; line-height:1.1; letter-spacing:-.6px; position:relative; z-index:1;}
+        .subtitle{margin:10px 0 0; color:var(--muted); font-size:15px; line-height:1.6; position:relative; z-index:1;}
+        .pill-row{margin-top:14px; display:flex; flex-wrap:wrap; gap:10px; position:relative; z-index:1;}
+        .hero-side{display:grid; grid-template-rows:auto 1fr; gap:14px;}
+        .card{
+            border:1px solid var(--stroke); border-radius:var(--radius);
+            background:rgba(255,255,255,.03); box-shadow:0 14px 35px rgba(0,0,0,.25);
+            padding:16px;
+        }
+        h2{margin:0; font-size:18px; letter-spacing:.2px;}
+        section{padding:22px 0; scroll-margin-top:var(--topbar);}
+        .section-head{display:flex; align-items:flex-end; justify-content:space-between; gap:14px; margin-bottom:12px;}
+        .section-head p{margin:0; color:var(--muted); font-size:13px;}
+        .grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:14px;}
+        .grid-2{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+        .callouts{display:flex; flex-direction:column; gap:12px;}
+        .callout{
+            display:flex; gap:12px; align-items:flex-start;
+            border:1px solid var(--stroke);
+            background:linear-gradient(135deg, rgba(122,162,255,.10), rgba(126,240,210,.06));
+            border-radius:var(--radius); padding:14px;
+        }
+        .callout .icon{
+            width:38px; height:38px; border-radius:14px; background:rgba(255,255,255,.05);
+            border:1px solid var(--stroke); display:grid; place-items:center; flex:0 0 auto; color:var(--text); font-weight:700;
+        }
+        .news{display:flex; flex-direction:column; gap:10px;}
+        .news-item{padding:10px 12px; border:1px solid var(--stroke); border-radius:var(--radius); background:rgba(255,255,255,.02);}
+        .news-item .year{margin:0 0 4px; font-size:12px; color:var(--faint);}
+        .news-item .text{margin:0; font-size:13px; color:var(--muted); line-height:1.55;}
+        .people{display:grid; grid-template-columns:repeat(3,1fr); gap:14px;}
+        .person{
+            display:flex; gap:12px; align-items:flex-start; padding:14px;
+            border:1px solid var(--stroke); border-radius:var(--radius); background:rgba(255,255,255,.02);
+        }
+        .avatar{
+            width:44px; height:44px; border-radius:16px; border:1px solid var(--stroke);
+            background:radial-gradient(circle at 30% 30%, rgba(122,162,255,.30), rgba(255,255,255,.02));
+            flex:0 0 auto; position:relative; overflow:hidden;
+        }
+        .avatar::after{
+            content:""; position:absolute; inset:-20px -30px auto auto; width:60px; height:60px;
+            background:radial-gradient(circle, rgba(126,240,210,.18), transparent 60%); transform:rotate(25deg);
+        }
+        .person h4{margin:0; font-size:13px; letter-spacing:.2px;}
+        .person .role{margin:2px 0 0; color:var(--muted); font-size:12px;}
+        .person .affil{margin:7px 0 0; color:var(--faint); font-size:12px; line-height:1.35;}
+        .muted{color:var(--muted);}
+        .footer{
+            padding:28px 0 40px; border-top:1px solid var(--stroke); margin-top:10px; color:var(--muted); font-size:13px;
+        }
+        .footer-grid{display:grid; grid-template-columns:1.2fr .8fr; gap:14px; align-items:start;}
+        .fine{color:var(--faint); font-size:12px; line-height:1.5;}
+        code.inline{
+            background:rgba(255,255,255,.05); border:1px solid var(--stroke); border-radius:10px; padding:2px 8px;
+            color:var(--text); font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono","Courier New",monospace; font-size:12px;
+        }
+        @media(max-width:980px){
+            .hero-grid{grid-template-columns:1fr;}
+            .hero-side{grid-template-rows:auto auto;}
+            .grid-3,.people,.footer-grid{grid-template-columns:1fr;}
+            .links{display:none;}
+        }
+    </style>
 </head>
-
-<body data-gr-c-s-loaded="true">
-<table width="840" border="0" align="center" cellspacing="0" cellpadding="20"><tbody><tr><td>
-
-  <!-- title -->
-
-  <p align="center">
-    <pageheading>Peng Zhou 
-      <!-- <a href="./index_CN.html" target="_blank">中文主页</a>
-    </pageheading><br> -->
-  </p>
-
-  <!-- avatar and bio -->
-
-  <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody><tr>
-    <td width="30%" valign="center" style="text-align: center;">
-      <img src="imgs/me3.jpg" width="80%" style="border-radius:20px">
-      <p align="center">
-        | <a href="https://scholar.google.com/citations?user=y8CcXFoAAAAJ">Google Scholar</a> | <a href="https://github.com/Jeffery-Zhou">Github</a> |
-<!--        <br> | <a href="https://www.linkedin.com/in/tete-xiao-ba2103120/"> Linkedin</a> | <a href="pdfs/resume.pdf">CV</a> | <a href="https://twitter.com/tetexiao_ai">Twitter</a> |-->
-      </p>
-    </td>
-
-    <td width="70%" valign="center" align="justify">
-      <p>
-        Currently, I am an assistant professor with the School of Advanced Engineering of The Great Bay University, 
-        and the Principal Investigator of the <a href="https://email-lab.github.io/">Embodied MAnipulation InteLligence （EMAIL） </a> Robotics Lab.  My research interests lie in the fields of <i>robotics</i>, <i>machine learning</i> and <i>computer vision</i>, with a focus on <strong>deformable object manipulation</strong>, <strong>robot perception and learning</strong> and <strong>task and motion planning</strong>.
-
-<!--         I will be joining <a href="https://www.gbu.edu.cn/?lang=en" target="_blank">Great Bay University</a> as an Assistant Professor in the Spring of 2025. -->
-      </p>
-
-      <!-- <p>
-        My research interests lie in the fields of <i>robotics</i>, <i>machine learning</i> and <i>computer vision</i>, with a focus on <strong>deformable object manipulation</strong>, <strong>robot perception and learning</strong> and <strong>task and motion planning</strong>.
-
-       <u>My ultimate research goal 🌈</u> is to <u> develop robots 🤖 with human-like cognition 🧠 and manipulation 🦾 abilities.</u>
-      </p> -->
-
-
-      <p>
-        Before that, I worked at the <a href='https://www.romi-lab.org/'> Robotic and Machine Intelligence (ROMI) Lab</a> and received my <b>Ph.D. degree in Robotics</b> from The Hong Kong Polytechnic University, under the supervision of <a href='https://www.polyu.edu.hk/me/david/'> Dr. David Navarro-Alarcon</a>.
-        I also worked as a Postdoctoral Research Fellow at the University of Hong Kong (HKU) advised by <a href='https://www.cs.hku.hk/people/academic-staff/jpan'> Dr. Pan Jia</a>.
-        In 2021, I visited the <a href='https://www.kth.se/is/rpl/about-rpl'>  Robotics, Perception and Learning (RPL) Lab </a> at KTH as an exchange Ph.D. student under the supervision of <a href='https://www.csc.kth.se/~danik/'> Prof. Danica Kragic </a>. Furthermore, during my Ph.D. study and subsequent research, I had the opportunity to collaborate with
-        <a href='https://jihong-zhu.github.io/'> Dr. Jihong Zhu </a>,
-        <a href='https://irmv.sjtu.edu.cn/wanghesheng'> Prof. Hesheng Wang </a>,
-        <a href='https://www.polyu.edu.hk/ise/people/academic-staff/pai-zheng/'> Dr. Pai Zheng </a>
-        and
-        <a href='https://people.uwe.ac.uk/Person/CharlieYang'> Prof. Charlie Yang </a>.
-      </p>
-      
-<!--      <p>-->
-<!--        Prior to PolyU, I had two years with Tencent and received a M.S. degree in Software Engineering from Tongji University in 2017 with the Outstanding Graduate honor.-->
-<!--      </p>-->
-    </td>
-  </tr>
-</tbody>
-</table>
-
-
-
- <!-- CfP -->
-
- <table width="100%" align="center" border="0" cellspacing="0" cellpadding="10">
-  <tbody>
-    <tr>
-      <td>
-        <sectionheading>Call for Papers</sectionheading>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <div style="background: #e8f4ff; border: 2px solid #2691d9; border-radius: 8px; padding: 18px 20px; margin: 12px 0;">
-          <ul style="margin: 0; padding-left: 20px; list-style: none;">
-            <li style="margin-bottom: 12px; white-space: nowrap; overflow-x: auto;">
-              <span style="font-size: 1.2em; color: #2691d9;">📢</span>
-              <b>[Workshop]</b>
-              <a href="https://cim-workshop.github.io/" style="color: #1565c0;">
-                Workshop on Contact and Impact-aware Manipulation</a> @ 
-              <a href="https://www.iros25.org/">
-                <img src="https://www.iros25.org/templates/iros2025/static/images/logo.png" alt="IROS 2025 Logo" style="height:38px;vertical-align:middle;margin-right:3px;">
-              </a> 
-            </li>
-            <li style="margin-bottom: 12px; white-space: nowrap; overflow-x: auto;">
-              <span style="font-size: 1.2em; color: #2691d9;">📢</span>
-              <b>[Special Issue]</b>
-              <a href="https://www.frontiersin.org/research-topics/70782/enhancing-robotic-dexterity-through-advanced-learning-and-multimodal-perception" target="_blank" style="color: #1565c0;">
-                Enhancing robotic dexterity through advanced learning and multimodal perception
-              </a>
-              @ 
-              <img src="https://www.european-mrs.com/sites/default/files/field/image/logo_frontiers_grey.png" alt="Frontiers Logo" style="height:28px;vertical-align:middle;margin-right:3px;">
-            </li>
-
-            <!-- <li style="margin-bottom: 12px; white-space: nowrap; overflow-x: auto;">
-              <span style="font-size: 1.2em; color: #2691d9;">📢</span>
-              <b>[Special Issue]</b>
-              <a href="https://www.mdpi.com/journal/electronics/special_issues/45780SII8Z" target="_blank" style="color: #1565c0;">
-                Advancements in Robotics: Perception, Manipulation, and Interaction
-              </a>
-              @ 
-              <img src="https://www.mdpi.com/img/journals/electronics-logo.png" alt="Electronics Logo" style="height:28px;vertical-align:middle;margin-right:3px;">
-            </li> -->
-
-            <!-- <li style="white-space: nowrap; overflow-x: auto;">
-              <span style="font-size: 1.2em; color: #2691d9;">📢</span>
-              <b>[Special Issue]</b>
-              <a href="https://www.mdpi.com/journal/electronics/special_issues/P08ZQW9WAG" target="_blank" style="color: #1565c0;">
-                Research on Deep Learning and Human-Robot Collaboration
-              </a>
-              @ 
-              <img src="https://www.mdpi.com/img/journals/electronics-logo.png" alt="Electronics Logo" style="height:28px;vertical-align:middle;margin-right:3px;">
-            </li> -->
-
-          </ul>
+<body>
+    <div class="topbar">
+        <div class="wrap nav">
+            <a class="brand" href="#top">
+                <img class="logo-img" src="imgs/hku-icon-small.jpg" alt="Logo">
+                <div>
+                    <h1>Peng Zhou</h1>
+                    <p>Assistant Professor · GBU</p>
+                </div>
+            </a>
+            <div class="links">
+                <a href="#about">About</a>
+                <a href="#news">News</a>
+                <a href="#pubs">Publications</a>
+                <a href="#awards">Awards</a>
+                <a class="btn primary" href="#contact"><span class="dot"></span> Contact</a>
+            </div>
         </div>
-      </td>
-    </tr>
-  </tbody>
-</table>
+    </div>
 
-  <!-- news -->
-
-  <table width="100%" align="center" border="0" cellspacing="0" cellpadding="10">
-    <tbody>
-    <tr>
-      <sectionheading>&nbsp;&nbsp;News</sectionheading>
-
-      <td>
-      <ul>
-
-        <!-- <li> <b>[Aug. 2025] </b> Assigned as a <strong> Program Committee</strong> for International Symposium on Embodied intelligence and Humanoid Robots (ROBOI 2025) </li> -->
-
-        
-        <!-- <li> <b>[Aug. 2025] </b> Assigned as an <strong> Organizing Committee Chair </strong> for 2025 6th International Conference on Artificial Intelligence Applications and Technologies (AIAAT 2025) </li> -->
-
-        <!-- <li> <b>[Aug. 2025] </b> Assigned as a <strong> Program Committee</strong> for IThe International Conference on Artificial Intelligence, Human-Computer Interaction and Robotics (AIHCIR 2025) </li>   -->
-
-        <li>
-          <b>[July 2025]</b> Dr. Zhou is serving as an <b>Associate Editor</b> for <a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=7083369">IEEE Robotics and Automation Letters</a>.
-        </li>
-
-        <li>
-          <b>[July 2025]</b> <a href="https://ieeexplore.ieee.org/abstract/document/11016126"> Explicit-Implicit Subgoal Planning for Long-Horizon Tasks with Sparse Rewards</a>, IEEE Transactions on Automation Science and Engineering.
-        </li>
-
-        <li>
-          <b>[July 2025]</b> <a href="https://ieeexplore.ieee.org/abstract/document/11018378">A Joint Learning of Force Feedback of Robotic Manipulation and Textual Cues for Granular Materials Classification</a>, IEEE Robotics and Automation Letters.
-        </li>
-
-        <li>
-          <b>[Jun. 2025]</b> <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=11009179">Iterative Shaping of Multi-Particle Aggregates based on Action Trees and VLM</a>, IEEE Robotics and Automation Letters.
-        </li>
-
-        <li>
-          <b>[Apr. 2025]</b> <a href="https://sites.google.com/view/iros-2025-workshop-cim">Workshop on Contact and Impact-aware Manipulation (IROS 2025)</a> is accepted by IROS 2025.
-        </li>
-
-
-
-        <!-- hidden News -->
-        <a href="javascript:toggleblock(&#39;old_news&#39;)">---- show more ----</a>
-        <div id="old_news" style="display: none;">
-
-        <li>
-          <b>[Nov. 2024] </b> Our Omni-mani team won the <strong> champion 🏆 in Track 3:
-          <a href=" https://www.bilibili.com/video/BV1aSDGYREKg/?vd_source=e3b2332677ebeb75a29ff75f04959d2f">
-            Robot Task for Organizing and Plugging/Unplugging Messy Cables
-          </a>
-        </strong> at the <i>Zhuhai International Dexterous Manipulation Challenge</i>.
-        </li>
-
-        <li> <b>[Oct. 2024] </b> Our new paper on
-          <a href="https://arxiv.org/abs/2401.11432">Deformable Bag Manipulation using Neural particle-based dynamics model</a>
-          accepted to <i>IEEE/ASME Transactions on Mechatronics</i>. </li>  
-
-        <li> <b>[Oct. 2024] </b> Our new paper on
-          <a href="https://ieeexplore.ieee.org/document/10605907">Interactive Perception for Deformable Bag Manipulation </a>
-          accepted to <i>IEEE Robotics and Automation Letters</i>. </li>
-
-        <li> <b>[Jul. 2024] </b> Served as a <strong> Guest Editor</strong> for Special Issue
-          <a href="https://www.mdpi.com/journal/electronics/special_issues/45780SII8Z">Advancements in Robotics: Perception, Manipulation, and Interaction </a>
-          with <i>Electronics</i>.</li>
-
-        <li> <b>[Dec. 2023]</b> Our new paper on
-          <a href="https://ieeexplore.ieee.org/abstract/document/10378708">Imitating Learning for Tool-based Garment Folding </a>
-          accepted to <i>IEEE Transactions on Industrial Informatics</i>.</li>  
-
-        <li> <b>[Jun. 2023] </b> Assigned as an <strong> Associate Editor</strong> for IEEE International Conference on Robotics and Biomimetics (ROBIO 2023) </li>  
-
-        <li> <b>[Nov. 2022] </b> Our team Won <strong> Best AI Implementation Award </strong> in <i>AI x HK Opencup 2022. </i> </li>
-
-        <li> <b>[Oct. 2022] </b> Won <strong> Outstanding Young Research Award  </strong>, <i>CNERC Annual Technical Symposium 2022.</i> </li>
-<!--        <li> <b> </b> </li>-->
-
+    <main>
+    <style>
+        main a{
+            color:var(--brand);
+            /* text-decoration:underline; */
+            text-decoration-color:rgba(122,162,255,.35);
+            transition:color .2s ease, text-decoration-color .2s ease;
+        }
+        main a:hover{
+            color:var(--brand2);
+            text-decoration-color:var(--brand2);
+        }
+    </style>
+    <header id="top" class="hero">
+      <div class="wrap" style="display:grid; grid-template-columns:220px 1fr; gap:16px; align-items:stretch;">
+        <!-- Left card: photo + links -->
+        <div class="hero-card" style="display:flex; flex-direction:column; gap:12px; align-items:center; padding:22px;">
+          <img src="imgs/me3.jpg" alt="Peng Zhou" style="width:140px; height:200px; border-radius:8px; object-fit:cover; border:1px solid var(--stroke);">
+          <h3 style="margin:6px 0 0; font-size:16px;">Peng Zhou</h3>
+          <p style="margin:0; font-size:13px; color:var(--muted); text-align:center;">
+            Assistant Professor <br> Great Bay University
+          </p>
+          <p style="margin:6px 0 0; font-size:13px; color:var(--muted); text-align:center;">
+            <a href="https://scholar.google.com/citations?user=y8CcXFoAAAAJ" target="_blank">Google Scholar</a> ·
+            <a href="https://github.com/Jeffery-Zhou" target="_blank">GitHub</a>
+          </p>
         </div>
 
-      </ul>
+        <!-- Right card: introduction -->
+        <div class="hero-card" style="padding:22px; display:flex; flex-direction:column; gap:12px; justify-content:center;">
+          <p class="kicker"><span class="dot"></span> Manipulation · Learning · Modelling · Planning</p>
 
-    </td>
+          <!-- <h1 class="title" style="font-size:28px; margin:0 0 6px;">Embodied MAnipulation InteLligence (EMAIL)</h1> -->
 
-<!--      <td width="22%" valign="center">-->
-<!--        <img src="imgs/zhuhai.jpg" width="100%" style="border-radius:20px">-->
-<!--      </td>-->
+          <p class="subtitle" style="margin:0 0 8px; font-size:15px; line-height:1.6;">
+            I am an Assistant Professor with the School of Advanced Engineering at The Great Bay University and the Principal Investigator of the Embodied MAnipulation InteLligence (EMAIL) Robotics Lab. My research interests span robotics, machine learning, and computer vision, focusing on deformable object manipulation, robot perception and learning, and task and motion planning.
+          </p>
 
-    </tr>
-    </tbody>
-  </table>
+          <p class="muted" style="margin:0; font-size:13px; line-height:1.45;">
+            Previously, I worked at the Robotic and Machine Intelligence (ROMI) Lab and received my Ph.D. in Robotics from The Hong Kong Polytechnic University under the supervision of
+            <a href="https://www.polyu.edu.hk/me/david/">Dr. David Navarro-Alarcon</a>. I also worked as a Postdoctoral Research Fellow at The University of Hong Kong (HKU) advised by
+            <a href="https://www.cs.hku.hk/people/academic-staff/jpan">Dr. Pan Jia</a>. In 2021, I visited the Robotics, Perception and Learning (RPL) Lab at KTH as an exchange Ph.D. student under the supervision of <a href="https://www.kth.se/profile/dani">Prof. Danica Kragic</a>. I have also had the opportunity to collaborate with <a href="https://scholar.google.com/citations?user=_sTr2TsAAAAJ">Dr. Jihong Zhu</a>, <a href="https://scholar.google.com/citations?user=9XF6XOsAAAAJ">Prof. Hesheng Wang</a>, <a href="https://www.polyu.edu.hk/ise/pai.zheng/research.html">Dr. Pai Zheng</a>, and <a href="https://www.a-star.edu.sg/sic/staff/soc/staff-profiles/charlie-yang">Prof. Charlie Yang</a>.
+          </p>
 
-  <!-- publication -->
-
-  <table width="100%" align="center" border="0" cellspacing="0" cellpadding="10">
-    <tbody><tr><td><sectionheading>&nbsp;&nbsp;Publications</sectionheading></td></tr></tbody>
-  </table>
-
-
-<!--  demo start -->
-  <table width="100%" align="center" border="0" cellspacing="0" cellpadding="15"><tbody>
-  <tr onmouseout="bag_stop()" onmouseover="bag_start()">
-
-    <td width="33%" valign="center" align="center">
-      <div id="bag_input" class="hidden" style="display: inline;">
-        <img src="imgs/bag_before.png" width="100%">
+          <div class="pill-row" style="margin-top:12px;">
+            <a class="btn primary" href="#featured">Explore Featured Demos</a>
+            <a class="btn" href="https://email-lab.github.io/"> Meet the Team</a>
+            <a class="btn" href="#contact"> Contact</a>
+          </div>
+        </div>
       </div>
-      <div id="bag_animate" style="display: none;">
-        <a href="imgs/bag_after.gif">
-          <img src="imgs/bag_after.gif" width="100%">
-        </a>
+    </header>
+
+<!-- 
+    <section id="special-issue">
+        <div class="wrap">
+            <div class="section-head">
+                <h2>Special Issue</h2>
+                <p>Intelligent Vision-Driven Robotics cover feature.</p>
+            </div>
+            <div class="card" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:12px; align-items:start; padding:14px;">
+                <div style="text-align:center;">
+                    <img src="./imgs/news/rl_si_hrn.png" alt="Intelligent Vision-Driven Robotics special issue"
+                        style="width:100%; height:260px; max-width:420px; border-radius:14px; border:1px solid var(--stroke); background:rgba(255,255,255,.03); box-shadow: var(--shadow); object-fit:cover;">
+                    <p style="margin:8px 0 0; color:var(--faint); font-size:12px;">Special issue cover: Intelligent Vision-Driven Robotics.</p>
+                </div>
+                <div style="text-align:center;">
+                    <img src="./imgs/news/rl_si_vet.png" alt="Intelligent Vision-Driven Robotics special issue"
+                        style="width:100%; height:260px; max-width:420px; border-radius:14px; border:1px solid var(--stroke); background:rgba(255,255,255,.03); box-shadow: var(--shadow); object-fit:cover;">
+                    <p style="margin:8px 0 0; color:var(--faint); font-size:12px;">Special issue cover: Intelligent Vision-Driven Robotics.</p>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+            <section id="featured" style="padding:26px 0;">
+              <div class="wrap">
+                <div class="section-head">
+                  <h2>Featured Demos</h2>
+                  <p>Teleoperation highlights of the UniBiDex system.</p>
+                </div>
+                <div style="border:1px solid var(--stroke); border-radius:var(--radius); padding:16px; box-shadow:var(--shadow); background:rgba(255,255,255,.02);">
+                  <div style="margin-top:8px; display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:12px;">
+                    <video src="./videos/tele-k.mp4" controls preload="metadata" style="width:100%; border-radius:12px; border:1px solid var(--stroke); background:rgba(255,255,255,.04);"></video>
+                    <video src="./videos/tele-vr.mp4" controls preload="metadata" style="width:100%; border-radius:12px; border:1px solid var(--stroke); background:rgba(255,255,255,.04);"></video>
+                    <video src="./videos/dex-challenge.mp4" controls preload="metadata" style="width:100%; border-radius:12px; border:1px solid var(--stroke); background:rgba(255,255,255,.04);"></video>
+                  </div>
+                  <div style="margin-top:12px; color:var(--muted); font-size:13px; line-height:1.5;">
+                    <strong>Highlights:</strong> UniBiDex Teleoperation System with Kinematics Device and immersive VR (🥇 T.J. Tarn Best Paper Finalist Award @ IEEE ROBIO2025).
+                  </div>
+                  <div style="margin-top:10px; color:var(--muted); font-size:13px; line-height:1.5;">
+                    <strong>Highlights:</strong> 🥇 Champion dexterous challenge runs using UniBiDex Teleoperation System (International Dexterity Challenge 2025).
+                  </div>
+                </div>
+              </div>
+            </section>
+
+
+
+
+    <section id="research">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Focus Areas</h2>
+          <p>Deformable object manipulation, multi-modal perception, and long-horizon autonomy.</p>
+        </div>
+        <div class="grid-3">
+          <div class="card">
+            <img src="./imgs/exps/bag_after.gif" alt="Deformable bag" style="width:100%;height:180px;object-fit:cover;border-radius:4px;border:1px solid var(--stroke);margin-bottom:8px;">
+            <h3 style="font-size:14px; margin:0 0 6px;">Deformable Object Manipulation</h3>
+            <p style="font-size:12px; line-height:1.5; margin:0; color:var(--muted);">Learning and modeling for non-rigid materials (garments, bags, granular materials), including neural particle-based dynamics and interactive perception under contact.</p>
+          </div>
+          <div class="card">
+            <img src="./imgs/exps/tool_after.gif" alt="Dexterous manipulation" style="width:100%;height:180px;object-fit:cover;border-radius:4px;border:1px solid var(--stroke);margin-bottom:8px;">
+            <h3 style="font-size:14px; margin:0 0 6px;">Dexterous Manipulation</h3>
+            <p style="font-size:12px; line-height:1.5; margin:0; color:var(--muted);">Perception and control that fuse vision with touch/force feedback to handle uncertainty, detect contact, and improve dexterity.</p>
+          </div>
+          <div class="card">
+            <img src="./imgs/exps/neuralpath_after.gif" alt="Task and motion planning" style="width:100%;height:180px;object-fit:cover;border-radius:4px;border:1px solid var(--stroke);margin-bottom:8px;">
+            <h3 style="font-size:14px; margin:0 0 6px;">Task &amp; Motion Planning</h3>
+            <p style="font-size:12px; line-height:1.5; margin:0; color:var(--muted);">Planning for long-horizon manipulation, including subgoal reasoning under sparse rewards and contact-aware trajectories.</p>
+          </div>
+        </div>
       </div>
-      <script charset="utf-8" type="text/javascript">
-        function bag_start() {
-          document.getElementById("bag_animate").style.display = "inline";
-          document.getElementById("bag_input").style.display = "none";
-        }
-
-        function bag_stop() {
-          document.getElementById("bag_animate").style.display = "none";
-          document.getElementById("bag_input").style.display = "inline";
-        }
-        bag_stop();
-      </script>
-    </td>
-
-    <td width="67%" valign="top">
-      <p>
-        <a href="https://ieeexplore.ieee.org/document/10758319" id="bagMani">
-          <heading> Bimanual Deformable Bag Manipulation Using a Structure-of-Interest Based Latent Dynamics Model</heading>
-        </a><br>
-
-        <b>Peng Zhou</b>,
-        Pai Zheng, Jiaming Qi, Chenxi Li, Hoi-yin Lee, Chenguang Yang, David Navarro-Alarcon, Jia Pan<sup>&#8224</sup>
-        <br>
-        IEEE/ASME Transactions on Mechatronics (T-Mech), 2024 <br>
-        *, <sup>&#8224</sup>: equal contribution, corresponding author<br>
-        | <a href="https://arxiv.org/abs/2401.11432">arXiv</a> |
-        <a href="https://sites.google.com/view/bagbot">project page</a> |
-      </p>
-      <p> This paper introduces a novel approach to deformable object manipulation (DOM) by emphasizing the identification and manipulation of structures of interest (SOIs) in deformable fabric bags. We propose a bimanual manipulation framework that leverages a graph neural network (GNN)-based latent dynamics model to succinctly represent and predict the behavior of these SOIs.
-      </p>
-    </td>
-
-  </tr>
-  </tbody></table>
-
-  <!--  demo end  -->
-
-
-
-<!--IP4DOM-->
-  <table width="100%" align="center" border="0" cellspacing="0" cellpadding="15"><tbody>
-
-  <tr onmouseout="ip4_stop()" onmouseover="ip4_start()">
-    <td width="33%" valign="center" align="center">
-      <div id="ip4_input" class="hidden" style="display: inline;">
-        <img src="imgs/ip4_before.png" width="100%">
-      </div>
-      <div id="ip4_animate" style="display: none;">
-        <a href="imgs/ip4_after.gif">
-          <img src="imgs/ip4_after.gif" width="100%">
-        </a>
-      </div>
-      <script charset="utf-8" type="text/javascript">
-        function ip4_start() {
-          document.getElementById("ip4_animate").style.display = "inline";
-          document.getElementById("ip4_input").style.display = "none";
-        }
-
-        function ip4_stop() {
-          document.getElementById("ip4_animate").style.display = "none";
-          document.getElementById("ip4_input").style.display = "inline";
-        }
-        ip4_stop()
-      </script>
-    </td>
-
-    <td width="67%" valign="top">
-      <p>
-        <a href="https://ieeexplore.ieee.org/document/10605907" id="ip4dom">
-          <heading> Interactive Perception for Deformable Object Manipulation</heading>
-        </a><br>
-
-        Zehang Weng*, <b>Peng Zhou*<sup>&#8224</sup></b>, Hang Yin, Alexander Kravberg, Anastasiia Varava, David Navarro-Alarcon, Danica Kragic <br>
-        IEEE Robotics and Automation Letters (RA-L), 2024 <br>
-
-        *, <sup>&#8224</sup>: equal contribution, corresponding author<br>
-        | <a href="https://arxiv.org/abs/2403.05177">arXiv</a> |
-<!--        <a href="https://humanoid-transformer.github.io/">project page</a> |-->
-      </p>
-      <p>
-        In this work, we address such a problem with a setup involving both an active camera and an object manipulator. Our approach is based on a sequential decision-making framework and explicitly considers the motion regularity and structure in coupling the camera and manipulator.
-      </p>
-    </td>
-
-  </tr>
-  </tbody></table>
-
-
-<!--  HRC-RCIM -->
-  <table width="100%" align="center" border="0" cellspacing="0" cellpadding="15"><tbody>
-
-  <tr onmouseout="hrc_stop()" onmouseover="hrc_start()">
-    <td width="33%" valign="center" align="center">
-      <div id="hrc_input" class="hidden" style="display: inline;">
-        <img src="imgs/hrc_before.png" width="100%">
-      </div>
-      <div id="hrc_animate" style="display: none;">
-        <a href="imgs/hrc_after.gif">
-          <img src="imgs/hrc_after.gif" width="100%">
-        </a>
-      </div>
-      <script charset="utf-8" type="text/javascript">
-        function hrc_start() {
-          document.getElementById("hrc_animate").style.display = "inline";
-          document.getElementById("hrc_input").style.display = "none";
-        }
-
-        function hrc_stop() {
-          document.getElementById("hrc_animate").style.display = "none";
-          document.getElementById("hrc_input").style.display = "inline";
-        }
-        hrc_stop()
-      </script>
-    </td>
-
-    <td width="67%" valign="top">
-      <p>
-        <a href="https://www.sciencedirect.com/science/article/pii/S0736584524000139" id="reactivePath">
-          <heading>Reactive human–robot collaborative manipulation of deformable linear objects using a new topological latent control model</heading>
-        </a><br>
-
-        <b>Peng Zhou</b>, Pai Zheng, Jiaming Qi<sup>&#8224</sup>, Chengxi Li, Hoi-Yin Lee, Anqing Duan, Liang Lu, Zhongxuan Li, Luyin Hu, David Navarro-Alarcon <br>
-        Robotics and Computer-Integrated Manufacturing (RCIM), 2024
-        <br>
-
-        <b>ESI Highly Cited + Hot Paper</b> <br>
-
-        *, <sup>&#8224</sup>: equal contribution, corresponding author<br>
-        | <a href="https://www.sciencedirect.com/science/article/pii/S0736584524000139">arXiv</a> |
-        <a href="https://sites.google.com/view/hrc-dom">project page</a> |
-      </p>
-      <p>
-        In this paper, a novel approach is proposed for real-time reactive deformable linear object manipulation in the context of human–robot collaboration. The proposed approach combines a topological latent representation and a fixed-time sliding mode controller to enable seamless interaction between humans and robots.
-      </p>
-    </td>
-
-  </tr>
-  </tbody></table>
-
-  <center>
-    <a href="javascript:toggleblock(&#39;old_papers&#39;)"> <div valign="top"> <heading>---- show more ---- </heading> </div> </a>
-  </center>
-  <br>
-  <div id="old_papers" style="display: none;">
-
-<!--  Second-->
-
-  <!-- RCIM -->
-  <table width="100%" align="center" border="0" cellspacing="0" cellpadding="15"><tbody>
-
-  <tr onmouseout="tool_stop()" onmouseover="tool_start()">
-    <td width="33%" valign="center" align="center">
-      <div id="tool_input" class="hidden" style="display: inline;">
-        <img src="imgs/tool_before.png" width="100%">
-      </div>
-      <div id="tool_animate" style="display: none;">
-        <a href="imgs/tool_after.gif">
-          <img src="imgs/tool_after.gif" width="100%">
-        </a>
-      </div>
-      <script charset="utf-8" type="text/javascript">
-        function tool_start() {
-          document.getElementById("tool_animate").style.display = "inline";
-          document.getElementById("tool_input").style.display = "none";
-        }
-
-        function tool_stop() {
-          document.getElementById("tool_animate").style.display = "none";
-          document.getElementById("tool_input").style.display = "inline";
-        }
-        tool_stop()
-      </script>
-    </td>
-
-    <td width="67%" valign="top">
-      <p>
-        <a href="https://ieeexplore.ieee.org/document/10378708" id="imitateFolding">
-          <heading> Imitating tool-based garment folding from a single visual observation using hand-object graph dynamics</heading>
-        </a><br>
-
-        <b>Peng Zhou</b>,
-        Jiaming Qi,
-        Anqing Duan,
-        Shengzeng Huo,
-        Zeyu Wu,
-        David Navarro-Alarcon <br>
-        IEEE Transactions on Industrial Informatics (T-II), 2024 <br>
-
-        <b>ESI Highly Cited </b> <br>
-
-        *, <sup>&#8224</sup>: equal contribution, corresponding author<br>
-        | <a href="https://ieeexplore.ieee.org/document/10378708">arXiv</a> |
-        <!-- <a href="https://humanoid-transformer.github.io/">project page</a> | -->
-      </p>
-      <p>
-        In this article, we propose a novel method of learning from demonstrations that enables robots to autonomously manipulate an assistive tool to fold garments. In contrast to traditional methods (that rely on low-level pixel features), our proposed solution uses a dense visual descriptor to encode the demonstration into a high-level hand-object graph (HoG) that allows to efficiently represent the interactions between the manipulated tool and robots. 
-      </p>
-    </td>
-
-  </tr>
-  </tbody></table>
-
-<!--  Third -->
-
-  <table width="100%" align="center" border="0" cellspacing="0" cellpadding="15"><tbody>
-
-  <tr onmouseout="lasesom_stop()" onmouseover="lasesom_start()">
-    <td width="33%" valign="center" align="center">
-      <div id="lasesom_input" class="hidden" style="display: inline;">
-        <img src="imgs/lasesom_before.png" width="100%">
-      </div>
-      <div id="lasesom_animate" style="display: none;">
-        <a href="imgs/lasesom_after.png">
-          <img src="imgs/lasesom_after.png" width="100%">
-        </a>
-      </div>
-      <script charset="utf-8" type="text/javascript">
-        function lasesom_start() {
-          document.getElementById("lasesom_animate").style.display = "inline";
-          document.getElementById("lasesom_input").style.display = "none";
-        }
-
-        function lasesom_stop() {
-          document.getElementById("lasesom_animate").style.display = "none";
-          document.getElementById("lasesom_input").style.display = "inline";
-        }
-        lasesom_stop()
-      </script>
-    </td>
-
-    <td width="67%" valign="top">
-      <p>
-        <a href="https://ieeexplore.ieee.org/abstract/document/9410363" id="lasesom">
-          <heading> Lasesom: A latent and semantic representation framework for soft object manipulation</heading>
-        </a><br>
-
-        <b>Peng Zhou</b>, Jihong Zhu, Shengzeng Huo, David Navarro-Alarcon <br>
-        IEEE Robotics and Automation Letters (RA-L), 2021 <br>
-
-        *, <sup>&#8224</sup>: equal contribution, corresponding author<br>
-        | <a href="https://ieeexplore.ieee.org/abstract/document/9410363">arXiv</a> |
-        <a href="https://sites.google.com/view/lasesom">project page</a> |
-      </p>
-      <p>
-        In this letter, we present LaSeSOM, a new feedback latent representation framework for semantic soft object manipulation. Our new method introduces internal latent representation layers between low-level geometric feature extraction and high-level semantic shape analysis.
-      </p>
-    </td>
-
-  </tr>
-  </tbody></table>
-
-
-  <table width="100%" align="center" border="0" cellspacing="0" cellpadding="15"><tbody>
-
-  <tr onmouseout="isa_stop()" onmouseover="isa_start()">
-    <td width="33%" valign="center" align="center">
-      <div id="isa_input" class="hidden" style="display: inline;">
-        <img src="imgs/isa_before.png" width="100%">
-      </div>
-      <div id="isa_animate" style="display: none;">
-        <a href="imgs/isa_after.png">
-          <img src="imgs/isa_after.png" width="100%">
-        </a>
-      </div>
-      <script charset="utf-8" type="text/javascript">
-        function isa_start() {
-          document.getElementById("isa_animate").style.display = "inline";
-          document.getElementById("isa_input").style.display = "none";
-        }
-
-        function isa_stop() {
-          document.getElementById("isa_animate").style.display = "none";
-          document.getElementById("isa_input").style.display = "inline";
-        }
-        isa_stop()
-      </script>
-    </td>
-
-    <td width="67%" valign="top">
-      <p>
-        <a href="https://www.sciencedirect.com/science/article/pii/S0019057824002180" id="isa">
-          <heading> Model predictive manipulation of compliant objects with multi-objective optimizer and adversarial network for occlusion compensation</heading>
-        </a><br>
-
-        <b>Peng Zhou</b>,
-        <a href='https://people.eecs.berkeley.edu/~ilija/'>Pai Zheng</a>,
-        <a href="">Jiaming Qi<sup>&#8224</sup></a>,
-        <a href="">Chengxi Li</a>,
-        <a href="">Hoi-Yin Lee</a>,
-        <a href="">Anqing Duan</a>,
-        <a href="">Liang Lu</a>,
-        <a href="">Zhongxuan Li</a>,
-        <a href="">Luyin Hu</a>,
-        <a href="">David Navarro-Alarcon</a> <br>
-        Robotics and Computer-Integrated Manufacturing (RCIM), 2024 <br>
-
-        *, <sup>&#8224</sup>: equal contribution, corresponding author<br>
-        | <a href="https://arxiv.org/abs/2205.09987">arXiv</a> |
-        <!-- <a href="https://humanoid-transformer.github.io/">project page</a> | -->
-      </p>
-      <p>
-        In this paper, we propose a new vision-based controller to automatically regulate the shape of compliant objects with robotic arms. Our method uses an efficient online surface/curve fitting algorithm that quantifies the object's geometry with a compact vector of features; This feedback-like vector enables to establish an explicit shape servo-loop. 
-      </p>
-    </td>
-
-  </tr>
-  </tbody></table>
-
-
-  <!-- neuralReact -->
-  <table width="100%" align="center" border="0" cellspacing="0" cellpadding="15"><tbody>
-
-  <tr onmouseout="neuralpath_stop()" onmouseover="neuralpath_start()">
-    <td width="33%" valign="center" align="center">
-      <div id="neuralpath_input" class="hidden" style="display: inline;">
-        <img src="imgs/neuralpath_before.png" width="100%">
-      </div>
-      <div id="neuralpath_animate" style="display: none;">
-        <a href="imgs/neuralpath_after.gif">
-          <img src="imgs/neuralpath_after.gif" width="100%">
-        </a>
-      </div>
-      <script charset="utf-8" type="text/javascript">
-        function neuralpath_start() {
-          document.getElementById("neuralpath_animate").style.display = "inline";
-          document.getElementById("neuralpath_input").style.display = "none";
-        }
-
-        function neuralpath_stop() {
-          document.getElementById("neuralpath_animate").style.display = "none";
-          document.getElementById("neuralpath_input").style.display = "inline";
-        }
-        neuralpath_stop()
-      </script>
-    </td>
-
-    <td width="67%" valign="top">
-      <p>
-        <a href="https://www.sciencedirect.com/science/article/pii/S0736584522002009" id="neuralReact">
-          <heading> Neural reactive path planning with Riemannian motion policies for robotic silicone sealing.</heading>
-        </a><br>
-
-        <b>Peng Zhou</b>,
-        <a href="">Pai Zheng</a>,
-        <a href="">Jiaming Qi<sup>&#8224</sup></a>,
-        <a href="">Chengxi Li</a>,
-        <a href="">Hoi-Yin Lee</a>,
-        <a href="">Anqing Duan</a>,
-        <a href="">Liang Lu</a>,
-        <a href="">Zhongxuan Li</a>,
-        <a href="">Luyin Hu</a>,
-        <a href="">David Navarro-Alarcon</a> <br>
-        Robotics and Computer-Integrated Manufacturing (RCIM), 2022 <br>
-
-        *, <sup>&#8224</sup>: equal contribution, corresponding author<br>
-        | <a href="https://www.sciencedirect.com/science/article/pii/S0736584522002009">arXiv</a> |
-        <a href="https://sites.google.com/view/reactive-sealing">project page</a> |
-      </p>
-      <p>
-        In this paper, we present the development of a new method to automate silicone sealing with robotic manipulators. To this end, we propose a novel neural path planning framework that leverages fractional-order differentiation for robust seam detection with vision and a Riemannian motion policy for effectively learning the manipulation of a sealing gun.
-      </p>
-    </td>
-
-  </tr>
-  </tbody></table>
-
-
-
-
-
-  <table width="100%" align="center" border="0" cellspacing="0" cellpadding="15"><tbody>
-
-  <tr onmouseout="welding_stop()" onmouseover="welding_start()">
-    <td width="33%" valign="center" align="center">
-      <div id="welding_input" class="hidden" style="display: inline;">
-        <img src="imgs/welding_before.png" width="100%">
-      </div>
-      <div id="welding_animate" style="display: none;">
-        <a href="imgs/welding_after.gif">
-          <img src="imgs/welding_after.gif" width="100%">
-        </a>
-      </div>
-      <script charset="utf-8" type="text/javascript">
-        function welding_start() {
-          document.getElementById("welding_animate").style.display = "inline";
-          document.getElementById("welding_input").style.display = "none";
-        }
-
-        function welding_stop() {
-          document.getElementById("welding_animate").style.display = "none";
-          document.getElementById("welding_input").style.display = "inline";
-        }
-        welding_stop()
-      </script>
-    </td>
-
-    <td width="67%" valign="top">
-      <p>
-        <a href="https://ieeexplore.ieee.org/document/9394722" id="welding">
-          <heading> Path planning with automatic seam extraction over point cloud models for robotic arc welding</heading>
-        </a><br>
-
-        <b>Peng Zhou</b>,
-        <a href=''>Pai Zheng</a>,
-        <a href="">Jiaming Qi<sup>&#8224</sup></a>,
-        <a href="">Chengxi Li</a>,
-        <a href="">Hoi-Yin Lee</a>,
-        <a href="">Anqing Duan</a>,
-        <a href="">Liang Lu</a>,
-        <a href="">Zhongxuan Li</a>,
-        <a href="">Luyin Hu</a>,
-        <a href="">David Navarro-Alarcon</a> <br>
-        IEEE Robotics and Automation Letters (RA-L), 2021 <br>
-
-        *, <sup>&#8224</sup>: equal contribution, corresponding author<br>
-        | <a href="https://ieeexplore.ieee.org/document/9394722">arXiv</a> |
-        <a href="https://sites.google.com/view/path-planning">project page</a> |
-      </p>
-      <p>
-        We present a sim-to-real learning-based approach for real-world humanoid locomotion.
-        To the best of our knowledge, this is the first demonstration of a fully learning-based method for real-world full-sized humanoid locomotion.
-      </p>
-    </td>
-
-  </tr>
-  </tbody></table>
-
-</div>
-
-
-  <!-- award -->
-
-  <table width="100%" align="center" border="0" cellpadding="10">
-    <tbody>
-
-
-    <tr>
-      <sectionheading>&nbsp;&nbsp;Awards</sectionheading>
-      &nbsp;
-      
-      <td width="30%" valign="center">
-        <img src="imgs/zhuhai.jpg" width="100%" style="border-radius:20px">
-      </td>
-
-      <td width="70%">
-      <ul>
-        <li><b>Track 3 champion, Zhuhai International Dexterous Manipulation Challenge</b>, 2024</li>
-        <li><b>IEEE R10 Outstanding Volunteer Award</b>, 2023</li>
-        <li><b>Outstanding Young Researcher</b>, National Engineering Research Center, 2022</li>
-        <li><b>IEEE MGA Young Professional Achievement Award</b>, 2022</li>
-        <li><b>Best Artificial Intelligence Application Award</b>,Hong Kong AI Open Competition, 2022</li>
-        <li><b>Hong Kong Innovation and Technology Commission
-          Research Talent Hub (RTH-ITF)</b>,2022 </li>
-        <li><b>IEEE Young Professional</b>, 2022</li>
-        <li><b>Outstanding Employee Award</b>, Tencent, 2018</li>
-        <li><b>Outstanding Graduate</b>, Tongji University, 2017</li>
-        <li><b>National Scholarship</b>, Ministry of Education, China, 2016</li>
-
-<!--        <li><b></b>, </li>-->
-      </ul>
-    </td>
-
-    </tr></tbody>
-  </table>
-
-  <!-- service -->
-
-<table width="100%" align="center" border="0" cellspacing="0" cellpadding="10">
-  <tbody>
-    <tr>
-      <td>
-        <sectionheading>Service</sectionheading>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <ul style="margin-left: 5%;">
-          <li>IEEE Robotics and Automation Letters (RA-L), Associate Editor</li>
-          <li>
-            Workshop on Contact and Impact-aware Manipulation (IROS 2025), Main Organizer<br>
-            <a href="https://sites.google.com/view/iros-2025-workshop-cim">https://sites.google.com/view/iros-2025-workshop-cim</a>
-          </li>
-          <li>Frontiers in Robotics and AI, Special Issue on Enhancing robotic dexterity through advanced learning and multimodal perception, Leading Guest Editor, to appear</li>
-          <li>Robot Learning, Youth Editorial Board Member</li>
-          <li>Robot Learning, Guest Editor of Special Issue on Human-Robot Interaction and Human-Centered Robotics</li>
-          <li>Electronics, Special Issue on Advancements in Robotics: Perception, Manipulation, and Interaction, Leading Guest Editor</li>
-          <li>IEEE International Conference on Robotics and Biomimetics (ROBIO 2023), Associate Editor</li>
-          <li>Metaverse Workshop on Elevating C3 Strategies in Robotics (ICRA 2024), Organizer</li>
-          <!-- <li>
-            Nature Communications, IEEE Transactions on Robotics (T-RO), The International Journal of Robotics Research (IJRR), IEEE/ASME Transactions on Mechatronics (T-Mech), IEEE Transactions on Automation Science and Engineering (T-ASE), IEEE Robotics and Automation Letters (RA-L), IEEE Transactions on Industrial Informatics (T-II), Robotics and Computer-Integrated Manufacturing (RCIM), Robotics Conferences (RSS, ICRA, IROS, ROBIO), Reviewer
-          </li> -->
-          <!-- <li>
-            IEEE Robotics and Automation Society (RAS), IEEE RAS on Robotic Hands, Grasping and Manipulation / Human-Robot Interaction &amp; Coordination / Robot Learning / Cognitive Robotics, Member
-          </li> -->
-        </ul>
-      </td>
-    </tr>
-  </tbody>
-</table>
-
-  <!-- <table width="100%" align="center" border="0" cellspacing="0" cellpadding="10"><tbody>
-    <tbody><tr><td><sectionheading>&nbsp;&nbsp;Service</sectionheading>
-    <tr>
-      <td width="15%" valign="center" align="center"><img style="display: inline" width="100%" src="imgs/polyu-logo.png"></td>
-      <td width="85%" valign="center">
-        Teaching Faculty, Perceptual Robotics (ME41006) (20-21 spring)
-        <br><br>
-        Teaching Faculty, Reinforcement Learning for Robotics (21-22 fall)</a>
-      </td>
-    </tr>
-    </tbody></table> -->
-
-  <!-- contact -->
-
-  <table width="100%" align="center" border="0" cellspacing="0" cellpadding="10">
-          <tbody>
-            <tr>
-              <td>
-                <sectionheading>Contact</sectionheading>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p style="margin-left: 5%;">
-        No. 16 University Road, <br>
-        Songshan Lake, Dongguan, <br>
-        Guangdong, China
-      </p>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-
-
-
-
-
-
-  <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody><tr><td><br>
-    <p align="right"><font size="2">
-      <b>Website design</b>: <a href="http://www.cs.berkeley.edu/~barron/">✩</a> <a href="https://people.eecs.berkeley.edu/~pathak/">✩</a>
-      <a href="https://tetexiao.com/">✩</a>
-      <br>
-      <b>Avatar photo</b>: generated in July 2024 by an AI app <a href="https://www.miaoya.cn/">Miaoya Camera</a>.
-    </font></p>
-  </td></tr></tbody></table>
-
-</td></tr></tbody></table>
-
-</body></html>
+    </section>
+
+
+        <section id="awards">
+            <div class="wrap">
+            <div class="section-head">
+                <!-- <h2 class="title">Awards</h2> -->
+                <h2>Awards & Service </h2>
+                <p>Selected honors.</p>
+            </div>
+            <div class="grid-2" style="font-size:13px;">
+                <div class="card">
+                <!-- <h5 class="title">Recent & Awards</h5> -->
+                <!-- <h3 style="font-size:15px; margin:0 0 6px;">Awards</h3> -->
+                <div style="max-height:240px; overflow:auto; padding-right:8px; margin-top:8px; font-size:13px;">
+                    <ul class="muted" style="padding-left:16px; margin:0; font-size:13px;"></ul>
+                    <!-- <li><em>国家自然科学基金优秀青年科学基金项目（海外）项目-上会</em> — 2025</li> -->
+                    <p style="font-size:12px; line-height:1.5; margin:0; color:var(--muted);"><em>T.J. Tarn Best Paper Finalist Award in Robotics</em> — IEEE ROBIO 2025</p>
+                    <p style="font-size:12px; line-height:1.5; margin:0; color:var(--muted);"><em>第二届国际灵巧操作挑战赛-冠军</em> — 2025</p>
+                    <p style="font-size:12px; line-height:1.5; margin:0; color:var(--muted);"><em>第一届国际灵巧操作挑战赛-冠军</em> — 2024</p>
+                    <p style="font-size:12px; line-height:1.5; margin:0; color:var(--muted);"><em>Best Paper Award (Finalist)</em> — IROS Workshop on Contact and Impact-aware Manipulation 2025</p>
+                    <p style="font-size:12px; line-height:1.5; margin:0; color:var(--muted);"><em>Distinguished Service Award</em> — IROS Workshop on Contact and Impact-aware Manipulation 2025</p>
+                    <p style="font-size:12px; line-height:1.5; margin:0; color:var(--muted);"><em>Best Poster Award (Finalist)</em> — IROS Workshop on Robotic Manipulation of Deformable Objects 2025</p>
+                    <p style="font-size:12px; line-height:1.5; margin:0; color:var(--muted);"><em>Excellent Early-Career Board Member Award</em> — Editorial Board of Robot Learning 2025</p>
+                    <p style="font-size:12px; line-height:1.5; margin:0; color:var(--muted);"><em>Best Paper Award</em> — ICRA Workshop on Representing and Manipulating Deformable Objects 2021</p>
+                    <p style="font-size:12px; line-height:1.5; margin:0; color:var(--muted);"><em>Best Paper Award</em> — IROS Workshop on Managing Deformation 2020</p>
+                    <p style="font-size:12px; line-height:1.5; margin:0; color:var(--muted);"><em>Research Talent Hub (RTH-ITF)</em> — Hong Kong Innovation and Technology Commission 2022</p>
+                    <p style="font-size:12px; line-height:1.5; margin:0; color:var(--muted);"><em>IEEE MGA Young Professional Achievement Award</em> — IEEE Region 10–Hong Kong Section 2022</p>
+                    <p style="font-size:12px; line-height:1.5; margin:0; color:var(--muted);"><em>最佳人工智能实践奖</em> — IEEE香港分协会、ACM香港分协会 2022</p>
+                    <p style="font-size:12px; line-height:1.5; margin:0; color:var(--muted);"><em>IEEE青年专家</em> — 电气电子工程师学会 2022</p>
+                </div>
+                </div>
+
+                <div class="card">
+                <!-- <h3 class="title">Service</h3> -->
+                <!-- <h3 style="font-size:15px; margin:0 0 6px;">Service</h3> -->
+                <div style="max-height:240px; overflow:auto; padding-right:8px; margin-top:8px; font-size:13px;">
+                    <p style="font-size:12px; line-height:1.5; margin:0; color:var(--muted);"><u>IEEE Robotics and Automation Letters (RA-L)</u>, <em>Associate Editor</em></p>
+                    <p style="font-size:12px; line-height:1.5; margin:0; color:var(--muted);"><u>IROS2025</u>, <em>Session Chair on Grasping and Manipulation</em></p>
+                    <p style="font-size:12px; line-height:1.5; margin:0; color:var(--muted);"><u>Workshop on Contact and Impact-aware Manipulation (IROS 2025)</u>, <em>Main Organizer</em> — <a href="https://cim-workshop.github.io/" target="_blank">https://cim-workshop.github.io/</a></p>
+                    <p style="font-size:12px; line-height:1.5; margin:0; color:var(--muted);"><u>Frontiers in Robotics and AI</u>, Special Issue on <em>Enhancing robotic dexterity through advanced learning and multimodal perception</em>, <em>Leading Guest Editor</em> (to appear)</p>
+                    <p style="font-size:12px; line-height:1.5; margin:0; color:var(--muted);"><u>Robot Learning</u>, <em>Youth Editorial Board Member</em></p>
+                    <p style="font-size:12px; line-height:1.5; margin:0; color:var(--muted);"><u>Robot Learning</u>, <em>Guest Editor</em> of Special Issue on <em>Human-Robot Interaction and Human-Centered Robotics</em></p>
+                    <p style="font-size:12px; line-height:1.5; margin:0; color:var(--muted);"><u>Electronics</u>, Special Issue on <em>Advancements in Robotics: Perception, Manipulation, and Interaction</em>, <em>Leading Guest Editor</em></p>
+                    <p style="font-size:12px; line-height:1.5; margin:0; color:var(--muted);"><u>IEEE International Conference on Robotics and Biomimetics (ROBIO 2023)</u>, <em>Associate Editor</em></p>
+                    <p style="font-size:12px; line-height:1.5; margin:0; color:var(--muted);"><u>Metaverse Workshop on Elevating C<sup>3</sup> Strategies in Robotics (ICRA 2024)</u>, <em>Organizer</em></p>
+                </div>
+                </div>
+
+            </div>
+            </div>
+        </section>
+
+        <section id="join">
+          <div class="wrap">
+        <div class="section-head">
+          <h2>Contact</h2>
+          <p>We welcome talents in robotics, learning, and control.</p>
+        </div>
+        <div class="grid-3">
+
+          <div class="card">
+            <!-- <h3>Openings</h3> -->
+            <p style="font-size:13px; line-height:1.5; margin:0; color:var(--muted);">Ph.D. students, postdocs, visiting students, and research interns (subject to program availability).</p>
+        </div>
+
+        <div class="card">
+            <!-- <h3>What to Send</h3> -->
+            <p style="font-size:13px; line-height:1.5; margin:0; color:var(--muted);">CV + short research statement + (optional) representative paper/code/demo link.
+            </p>
+        </div>
+
+        <div class="card">
+            <!-- <h3>Contact</h3> -->
+            <p style="font-size:13px; line-height:1.5; margin:0; color:var(--muted);">Email: <code class="inline">pzhou AT gbu DOT edu DOT cn</code>
+            </p>
+        </div>
+
+        </div>
+          </div>
+        </section>
+
+
+
+
+    </main>
+
+    <footer class="footer">
+        <div class="wrap footer-grid">
+            <div>© <span id="year"></span> Peng Zhou. All rights reserved.</div>
+            <div class="fine">Embodied Manipulation Intelligence · Great Bay University.</div>
+        </div>
+    </footer>
+
+    <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>
